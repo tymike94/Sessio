@@ -86,6 +86,21 @@ body {
 .nav-menu a:hover {
     color: var(--accent);
 }
+.mobile-menu-toggle { /* Le bouton hamburger */
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-light);
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
 
 /* --- Hero Section --- */
 .hero {
@@ -146,8 +161,8 @@ body {
 }
 .feature-text {
     flex: 1.2;
-    position: relative; /* CORRECTION : Assure que le z-index fonctionne */
-    z-index: 2;         /* CORRECTION : Place le texte au-dessus des images */
+    position: relative;
+    z-index: 2;
 }
 .feature-text h2 {
     font-size: clamp(2rem, 5vw, 3rem);
@@ -165,7 +180,7 @@ body {
     display: flex;
     position: relative;
     justify-content: center;
-    gap: -40px; /* CORRECTION : Superposition réduite */
+    gap: -40px;
 }
 .phone-mockup {
     max-width: 280px;
@@ -180,13 +195,13 @@ body {
     z-index: 3;
 }
 .feature-image-group img:nth-child(2) {
-    transform: rotate(5deg) translateX(-40px); /* CORRECTION : Décalage réduit */
+    transform: rotate(5deg) translateX(-40px);
 }
 .feature-image-group img:nth-child(2):hover {
     transform: scale(1.05) rotate(0deg) translateX(-40px);
 }
 .feature:nth-child(even) .feature-image-group img:nth-child(2) {
-    transform: rotate(-5deg) translateX(40px); /* CORRECTION : Décalage réduit */
+    transform: rotate(-5deg) translateX(40px);
 }
 .feature:nth-child(even) .feature-image-group img:nth-child(2):hover {
     transform: scale(1.05) rotate(0deg) translateX(40px);
@@ -220,13 +235,44 @@ footer a:hover {
         margin: 0 auto;
     }
     .feature-image-group {
-        gap: -100px; /* On peut augmenter un peu la superposition sur mobile */
+        gap: -100px;
         margin-top: 2rem;
     }
 }
 
 @media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block; /* Affiche le bouton hamburger */
+    }
     .nav-menu {
-        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--bg-dark);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    .nav-menu.is-active {
+        transform: translateX(0);
+    }
+    .nav-menu li {
+        margin: 20px 0;
+    }
+    .nav-menu a {
+        font-size: 1.5rem;
+    }
+    .mobile-menu-toggle.is-active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .mobile-menu-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-toggle.is-active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }

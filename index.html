@@ -3,75 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sessio - Votre Carnet d'Entraînement Intelligent</title>
+    <title>Sessio - Révolutionnez Votre Entraînement</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpeg" href="img/logo.jpg">
 </head>
 <body>
 
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="nav-logo">
+                <img src="img/logo.jpg" alt="Logo Sessio">
+                Sessio
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#planification">Planification</a></li>
+                <li><a href="#suivi">Suivi</a></li>
+                <li><a href="#analyse">Analyse</a></li>
+                <li><a href="#communaute">Communauté</a></li>
+                <li><a href="#gamification">Progression</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header class="hero">
         <div class="container">
-            <img src="img/logo.jpg" alt="Logo de Sessio" class="hero-logo">
-            <h1 class="hero-title">Passez au niveau supérieur.</h1>
-            <p class="hero-subtitle">Sessio est votre partenaire d'entraînement intelligent. Suivez vos performances, battez vos records et ne vous entraînez plus jamais seul.</p>
+            <h1 class="hero-title">Votre entraînement. Vos données. Votre progression.</h1>
+            <p class="hero-subtitle">Arrêtez de deviner, commencez à progresser. Sessio est le carnet d'entraînement intelligent qui transforme chaque séance en une victoire mesurable.</p>
             <a href="URL_VERS_LE_PLAY_STORE" class="cta-button">Télécharger l'Application</a>
         </div>
     </header>
 
     <main>
-        <section class="feature container">
+        <section id="planification" class="feature container">
             <div class="feature-text">
-                <h2>Planifiez chaque séance. Atteignez chaque objectif.</h2>
-                <p>Créez des programmes d'entraînement sur mesure, dupliquez vos séances préférées et partagez-les avec vos amis. L'organisation est la clé de la réussite.</p>
+                <h2>Une organisation sans faille.</h2>
+                <p>Créez des programmes d'entraînement illimités et organisez vos séances comme vous le souhaitez. Dupliquez un programme en un clic pour commencer une nouvelle phase, ou partagez vos meilleures créations avec vos amis pour les inspirer.</p>
             </div>
-            <div class="feature-image">
-                <img src="img/vuprogramscreen.jpg" alt="Écran des programmes de Sessio">
+            <div class="feature-image-group">
+                <img src="img/vuprogramscreen.jpg" alt="Écran des programmes de Sessio" class="phone-mockup">
+                <img src="img/partage.jpg" alt="Menu de partage de séance" class="phone-mockup">
             </div>
         </section>
 
-        <section class="feature container">
+        <section id="suivi" class="feature container">
             <div class="feature-text">
-                <h2>Concentrez-vous sur l'effort. On s'occupe du reste.</h2>
-                <p>Enregistrez chaque série, poids et répétition en quelques clics. Avec le chronomètre intégré et l'affichage de vos records en direct, restez focalisé sur votre performance.</p>
+                <h2>Concentrez-vous sur l'effort.</h2>
+                <p>Pendant votre séance, tout est pensé pour votre performance. Et pour vous faire gagner du temps, **Sessio pré-remplit automatiquement les poids et répétitions de votre dernière performance** sur chaque exercice. Plus besoin de chercher dans vos notes, votre progression est à portée de main.</p>
             </div>
-            <div class="feature-image">
-                <img src="img/vuséanceencours.jpg" alt="Vue d'une séance en cours">
+            <div class="feature-image-group">
+                <img src="img/vuséanceencours.jpg" alt="Vue d'une séance en cours" class="phone-mockup">
+                <img src="img/historiqueseancedetails.jpg" alt="Détails d'une séance terminée" class="phone-mockup">
             </div>
         </section>
         
-        <section class="showcase">
-             <h2>Tout ce dont vous avez besoin pour progresser</h2>
-             <div class="showcase-grid container">
-                <div class="card">
-                    <img src="img/suividesperformances.jpg" alt="Suivi des performances">
-                    <h3>Visualisez votre Progression</h3>
-                    <p>Analysez vos performances avec des graphiques clairs sur le volume, le 1RM estimé et bien plus.</p>
-                </div>
-                <div class="card">
-                    <img src="img/records.jpg" alt="Records personnels">
-                    <h3>Battez vos Records</h3>
-                    <p>Sessio sauvegarde automatiquement vos records pour que vous puissiez vous dépasser à chaque séance.</p>
-                </div>
-                <div class="card">
-                    <img src="img/classeemntteam.jpg" alt="Classement d'équipe">
-                    <h3>L'Esprit d'Équipe</h3>
-                    <p>Rejoignez vos amis, participez au classement et motivez-vous mutuellement pour atteindre le sommet.</p>
-                </div>
-                 <div class="card">
-                    <img src="img/profil1.jpg" alt="Profil utilisateur">
-                    <h3>Un Profil Complet</h3>
-                    <p>Montez de niveau, débloquez des trophées et suivez vos statistiques clés en un coup d'œil.</p>
-                </div>
-             </div>
+        <section id="analyse" class="feature container">
+            <div class="feature-text">
+                <h2>Chaque donnée compte.</h2>
+                <p>Ne laissez rien au hasard. Suivez l'évolution de votre volume total pour chaque exercice, découvrez votre 1RM (force maximale) estimé et consultez votre historique complet dans une vue liste ou calendrier. Identifiez vos points forts et vos faiblesses pour ajuster votre plan.</p>
+            </div>
+            <div class="feature-image-group">
+                <img src="img/suividesperformances.jpg" alt="Graphique de suivi des performances" class="phone-mockup">
+                <img src="img/prestimé.jpg" alt="1RM Estimé" class="phone-mockup">
+            </div>
         </section>
 
-        <section class="final-cta container">
-            <h2>Prêt(e) à commencer ?</h2>
-            <p>Rejoignez des milliers d'utilisateurs et transformez votre entraînement dès aujourd'hui.</p>
-            <a href="URL_VERS_LE_PLAY_STORE" class="cta-button">Télécharger Gratuitement</a>
+        <section id="communaute" class="feature container">
+            <div class="feature-text">
+                <h2>Ne vous entraînez plus jamais seul.</h2>
+                <p>L'entraide est la clé. Créez ou rejoignez des équipes, suivez l'activité de vos partenaires dans un fil d'actualité dédié et mesurez-vous à eux dans le classement hebdomadaire, mensuel ou global. Une dose de compétition saine pour une motivation sans faille.</p>
+            </div>
+            <div class="feature-image-group">
+                <img src="img/classeemntteam.jpg" alt="Classement d'une équipe Sessio" class="phone-mockup">
+                <img src="img/actualiteesteam.jpg" alt="Fil d'actualité d'une équipe" class="phone-mockup">
+            </div>
         </section>
+
+        <section id="gamification" class="feature container">
+            <div class="feature-text">
+                <h2>Votre motivation, notre mission.</h2>
+                <p>Votre profil est le reflet de votre travail. Gagnez de l'XP à chaque action, montez de niveau, débloquez des dizaines de trophées et suivez vos objectifs personnels comme la perte de poids. Le calendrier d'activité vous rappelle votre régularité et vous pousse à ne jamais abandonner.</p>
+            </div>
+            <div class="feature-image-group">
+                <img src="img/profil1.jpg" alt="Profil utilisateur" class="phone-mockup">
+                <img src="img/trophées.jpg" alt="Écran des trophées" class="phone-mockup">
+            </div>
+        </section>
+
     </main>
-
+    
     <footer>
         <div class="container">
             <p><strong>Sessio</strong> par Tymike94</p>

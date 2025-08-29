@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.classList.toggle('is-active');
     });
 
-    // Ferme le menu quand on clique sur un lien
+    // Ferme le menu quand on clique sur un lien (sur mobile)
     navMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             mobileMenuToggle.classList.remove('is-active');

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessio - Votre Carnet d'Entraînement Intelligent</title>
+    <style>
+        :root {
+            --primary-color: #2c2c2c;
+            --secondary-color: #1a1a1a;
+            --accent-color: #4CAF50; /* Vert Sessio */
+            --text-color: #f0f0f0;
+            --text-muted: #a0a0a0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 80px 20px;
+        }
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+        }
+        header h1 span {
+            color: var(--accent-color);
+        }
+        header p {
+            font-size: 1.2em;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        .features {
+            padding: 40px 0;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 80px;
+            gap: 40px;
+        }
+        .feature:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .feature-text {
+            flex: 1;
+        }
+        .feature-text h2 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        .feature-text p {
+            font-size: 1.1em;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .feature-image {
+            flex: 1;
+            text-align: center;
+        }
+        .feature-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-height: 600px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--primary-color);
+            margin-top: 40px;
+        }
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        @media (max-width: 768px) {
+            .feature {
+                flex-direction: column !important;
+            }
+            header h1 { font-size: 2.5em; }
+            .feature-text h2 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Le carnet d'entraînement qui <span>comprend</span> les sportifs.</h1>
+            <p>Sessio est plus qu'un simple carnet de musculation. C'est votre partenaire d'entraînement intelligent qui vous suit partout pour vous aider à atteindre vos objectifs.</p>
+            <a href="#google-play-link" class="cta-button">Télécharger sur le Play Store</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="features">
+
+            <div class="feature">
+                <div class="feature-text">
+                    <h2>Planifiez et suivez. Simplement.</h2>
+                    <p>Créez des programmes d'entraînement sur mesure, dupliquez vos séances préférées et partagez-les avec vos amis. Pendant l'effort, Sessio vous guide et enregistre chaque série, poids et répétition, sans vous distraire.</p>
+                </div>
+                <div class="feature-image">
+                    <img src="img/vuprogramscreen.jpg" alt="Écran des programmes de Sessio">
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-text">
+                    <h2>Visualisez votre progression</h2>
+                    <p>Analysez les détails de chaque séance avec des statistiques claires comme le volume total. Suivez l'évolution de vos performances sur chaque exercice grâce à des graphiques simples et motivants.</p>
+                </div>
+                <div class="feature-image">
+                    <img src="img/suividesperformances.jpg" alt="Graphique de suivi des performances">
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-text">
+                    <h2>Battez vos records</h2>
+                    <p>Sessio identifie et sauvegarde automatiquement vos records personnels (PR) sur chaque exercice. Consultez vos meilleures performances, mettez vos PR favoris en avant et visez toujours plus haut !</p>
+                </div>
+                <div class="feature-image">
+                    <img src="img/records.jpg" alt="Écran des records personnels">
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-text">
+                    <h2>Ne vous entraînez plus jamais seul</h2>
+                    <p>Rejoignez ou créez des équipes avec vos amis. Participez au classement hebdomadaire, suivez l'activité de vos coéquipiers et motivez-vous mutuellement pour atteindre le sommet.</p>
+                </div>
+                <div class="feature-image">
+                    <img src="img/classeemntteam.jpg" alt="Classement d'une équipe Sessio">
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-text">
+                    <h2>Un profil qui vous ressemble</h2>
+                    <p>Montez de niveau, suivez vos statistiques clés, débloquez des trophées et gardez un œil sur vos objectifs et votre régularité grâce au calendrier d'activité. Votre profil est le reflet de votre détermination.</p>
+                </div>
+                <div class="feature-image">
+                    <img src="img/profil1.jpg" alt="Profil utilisateur sur Sessio">
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p><strong>Sessio</strong></p>
+            <p>
+                <a href="URL_VERS_VOTRE_POLITIQUE_DE_CONFIDENTIALITE">Politique de Confidentialité</a>
+                <a href="URL_VERS_VOTRE_PAGE_DE_SUPPRESSION">Suppression du compte</a>
+            </p>
+            <p>&copy; 2025 Tymike94. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

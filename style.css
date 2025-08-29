@@ -28,6 +28,7 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-light);
     line-height: 1.7;
+    overflow-x: hidden; /* Empêche le défilement horizontal indésirable */
 }
 
 .container {
@@ -48,7 +49,7 @@ body {
     transition: background-color 0.3s ease;
 }
 .navbar.scrolled {
-    background-color: rgba(30, 30, 30, 0.85);
+    background-color: rgba(30, 30, 30, 0.9); /* Plus opaque quand scrollé */
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--primary);
 }
@@ -86,12 +87,13 @@ body {
 .nav-menu a:hover {
     color: var(--accent);
 }
-.mobile-menu-toggle { /* Le bouton hamburger */
-    display: none;
+.mobile-menu-toggle {
+    display: none; /* Caché par défaut sur grand écran */
     background: none;
     border: none;
     cursor: pointer;
     z-index: 1001;
+    padding: 10px;
 }
 .mobile-menu-toggle span {
     display: block;
@@ -100,6 +102,15 @@ body {
     background-color: var(--text-light);
     margin: 5px 0;
     transition: all 0.3s ease-in-out;
+}
+.mobile-menu-toggle.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.mobile-menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+}
+.mobile-menu-toggle.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* --- Hero Section --- */
@@ -180,7 +191,9 @@ body {
     display: flex;
     position: relative;
     justify-content: center;
-    gap: -40px;
+    align-items: center; /* Centrage vertical */
+    gap: -40px; /* Superposition réduite */
+    min-height: 300px; /* Hauteur minimale pour éviter l'écrasement */
 }
 .phone-mockup {
     max-width: 280px;
@@ -189,19 +202,21 @@ body {
     border: 8px solid #000;
     box-shadow: 0 20px 50px rgba(0,0,0,0.6);
     transition: transform 0.4s ease;
+    display: block; /* S'assure que l'image est un bloc pour les marges auto */
+    margin: 0 auto; /* Centrage horizontal de chaque image si nécessaire */
 }
 .phone-mockup:hover {
     transform: scale(1.05) rotate(2deg);
     z-index: 3;
 }
 .feature-image-group img:nth-child(2) {
-    transform: rotate(5deg) translateX(-40px);
+    transform: rotate(5deg) translateX(-40px); /* Décalage réduit */
 }
 .feature-image-group img:nth-child(2):hover {
     transform: scale(1.05) rotate(0deg) translateX(-40px);
 }
 .feature:nth-child(even) .feature-image-group img:nth-child(2) {
-    transform: rotate(-5deg) translateX(40px);
+    transform: rotate(-5deg) translateX(40px); /* Décalage réduit */
 }
 .feature:nth-child(even) .feature-image-group img:nth-child(2):hover {
     transform: scale(1.05) rotate(0deg) translateX(40px);
@@ -223,31 +238,54 @@ footer a:hover {
     color: var(--accent);
 }
 
-/* --- Responsive Design --- */
-@media (max-width: 900px) {
+/* --- Responsive Design pour tablettes et petits desktops --- */
+@media (max-width: 992px) {
     .feature {
-        flex-direction: column !important;
-        gap: 2rem;
-        padding: 4rem 0;
+        flex-direction: column !important; /* Force la colonne pour toutes les sections */
+        gap: 3rem; /* Espace plus grand entre texte et image */
+        padding: 3rem 0;
         text-align: center;
     }
     .feature-text p {
-        margin: 0 auto;
+        margin: 0 auto; /* Centre le paragraphe */
     }
     .feature-image-group {
-        gap: -100px;
+        gap: -60px; /* Ajuste la superposition */
         margin-top: 2rem;
+        min-height: auto; /* Laisse la hauteur s'adapter au contenu */
+        flex-wrap: wrap; /* Permet aux images de passer à la ligne si besoin */
+        justify-content: center;
+    }
+    .phone-mockup {
+        max-width: 250px; /* Légèrement plus petit sur tablette */
+    }
+    .feature-image-group img:nth-child(2) {
+        transform: rotate(5deg) translateX(-30px); /* Ajuste le décalage */
+    }
+    .feature-image-group img:nth-child(2):hover {
+        transform: scale(1.05) rotate(0deg) translateX(-30px);
+    }
+    .feature:nth-child(even) .feature-image-group img:nth-child(2) {
+        transform: rotate(-5deg) translateX(30px); /* Ajuste le décalage */
+    }
+    .feature:nth-child(even) .feature-image-group img:nth-child(2):hover {
+        transform: scale(1.05) rotate(0deg) translateX(30px);
+    }
+    .hero-title {
+        font-size: 3.5rem;
     }
 }
 
-@media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: block; /* Affiche le bouton hamburger */
+/* --- Responsive Design pour mobile (max-width: 767px) --- */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 15px; /* Réduit le padding sur les bords */
     }
     .nav-menu {
+        display: none; /* Cache le menu desktop */
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
         width: 100%;
         height: 100vh;
         background-color: var(--bg-dark);
@@ -256,23 +294,67 @@ footer a:hover {
         align-items: center;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
+        z-index: 999; /* Moins que le toggle, plus que le reste */
     }
     .nav-menu.is-active {
         transform: translateX(0);
+        display: flex; /* Affiche le menu mobile */
     }
     .nav-menu li {
         margin: 20px 0;
     }
     .nav-menu a {
         font-size: 1.5rem;
+        color: var(--text-light); /* Rend les liens plus visibles */
     }
-    .mobile-menu-toggle.is-active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
+    .mobile-menu-toggle {
+        display: block; /* Affiche le bouton hamburger */
     }
-    .mobile-menu-toggle.is-active span:nth-child(2) {
-        opacity: 0;
+
+    .hero-title {
+        font-size: 2.5rem;
     }
-    .mobile-menu-toggle.is-active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+    .hero-subtitle {
+        font-size: 1rem;
     }
+    .feature-text h2 {
+        font-size: 2rem;
+    }
+    .feature-text p {
+        font-size: 1rem;
+    }
+    .feature-image-group {
+        flex-direction: column; /* Images empilées sur mobile */
+        gap: 1.5rem; /* Espacement entre les images */
+        margin-top: 1.5rem;
+        position: static; /* Enlève le positionnement relatif */
+    }
+    .phone-mockup {
+        max-width: 280px; /* Taille unique pour les images */
+        border-width: 6px; /* Bordure plus fine */
+    }
+    /* Désactive les transformations et superpositions pour mobile */
+    .feature-image-group img:nth-child(2) {
+        transform: none;
+        position: static;
+        margin-top: 1.5rem; /* Espace si elles sont l'une en dessous de l'autre */
+    }
+    .feature-image-group img:nth-child(2):hover {
+        transform: none;
+    }
+    .feature:nth-child(even) .feature-image-group img:nth-child(2) {
+        transform: none;
+    }
+    .feature:nth-child(even) .feature-image-group img:nth-child(2):hover {
+        transform: none;
+    }
+    /* Cache la deuxième image sur mobile pour simplifier le design */
+    .hidden-on-mobile {
+        display: none;
+    }
+}
+
+/* Assure que l'overflow-x n'est jamais activé involontairement */
+body {
+    overflow-x: hidden;
 }
